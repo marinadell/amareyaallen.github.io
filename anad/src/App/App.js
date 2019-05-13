@@ -1,21 +1,19 @@
 import React from 'react';
 import './App.css';
 import Header from '../Header/Header';
+import {HashRouter as Router, Route} from 'react-router-dom';
+import Resume from '../Resume/Resume'
+import Home from '../Home/Home'
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <div className="First">
-      
-      </div>
-      <div className="Second">
-      <img src="./images/amareya.jpg" alt="Smiley face" className="header-img"></img>
-      </div>
-      <div className="Third">
-
-      </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Route exact path="/" component={Home}/>
+        <Route exact path="/resume" component={Resume}/>
     </div>
+    </Router>
   );
 }
 
